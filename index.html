@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Japanese Numbers Quiz</title>
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="main-container">
+    <!-- Header -->
+    <header class="quiz-header">
+      <h1 class="title-text">Can You Count to 10 in Japanese?</h1>
+    </header>
+    <!-- Quiz section -->
+    <div id="intro-container" class="question-container">
+      <h3>Quiz Introduction</h3>
+      <button class="btn"><a href="#">Start</a></button>
+    </div>
+
+    <!-- Quiz outline
+    q1: 1
+    q2: 2
+    q3: 3
+    a4: 4
+    q5: 5
+    q6: 6
+    q7: 7
+    q8: 8
+    q9: 9
+    q10: 10
+    -->
+
+    <div class="question-container hide">
+      <!-- Question image -->
+      <div class="question-img">
+        <img src="http://s3.amazonaws.com/assets.prod.vetstreet.com/2a/cd/ee484be546418f40cc3cbc194b52/kitten-in-arms-thinkstockphotos-106397271-335lc070915jpg.jpg" />
+      </div>
+      <!-- Possible answers -->
+      <ul class="answers">
+        <li>Answer 1</li>
+        <li>Answer 2</li>
+        <li>Answer 3</li>
+        <li>Answer 4</li>
+      </ul>
+    </div>
+    <!-- Progress bar -->
+    <div id="progress-tracker">
+      <div id="progress">
+        <p>
+          progress bar lol
+        </p>
+      </div>
+    </div>
+    <!-- Quiz results -->
+    <div id="results-container" class="question-container hide">
+      <div id="results">
+        <p>
+          results lol
+        </p>
+      </div>
+    </div>
+  </div>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
