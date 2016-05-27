@@ -10,7 +10,7 @@
 <body>
   <div class="main-container clearfix">
     <!-- Header -->
-    <header class="quiz-header">
+    <header>
       <h1 class="title-text">Can You Count to 10 in Japanese?</h1>
     </header>
     <!-- Quiz section -->
@@ -18,12 +18,11 @@
       <h3 class="subtitle-text">This short quiz will test your ability to read and count the numbers 1 through 10 in Japanese; good luck!</h3>
     </div>
     <ul class="col-1-2 answers center">
-      <li><a href="#">Start</a></li>
+      <li id="start"><a href="#">Start</a></li>
     </ul>
-    <!-- <button class="btn"><a href="#">Start</a></button> -->
     <!-- Question 1 -->
     <!-- TODO: hide after testing -->
-    <div class="question-container hide">
+    <div id="question-1" class="question-container hide">
       <!-- Question image -->
       <div class="col-1-2 question-char">
         <p>
@@ -183,7 +182,7 @@
       </ul>
     </div>
     <!-- Progress bar -->
-    <div class="col-1-1 progress-tracker hide">
+    <div id="progress-bar" class="col-1-1 progress-tracker hide">
       <div class="progress">
       </div>
     </div>
