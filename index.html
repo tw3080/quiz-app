@@ -14,13 +14,16 @@
       <h1 class="title-text">Can You Count to 10 in Japanese?</h1>
     </header>
     <!-- Quiz section -->
-    <div id="intro-container" class="question-container intro hide">
+    <div id="intro-container" class="question-container intro">
       <h3 class="subtitle-text">This short quiz will test your ability to read and count the numbers 1 through 10 in Japanese; good luck!</h3>
     </div>
-    <button class="btn hide"><a href="#">Start</a></button>
+    <ul class="col-1-2 answers center">
+      <li><a href="#">Start</a></li>
+    </ul>
+    <!-- <button class="btn"><a href="#">Start</a></button> -->
     <!-- Question 1 -->
     <!-- TODO: hide after testing -->
-    <div class="question-container">
+    <div class="question-container hide">
       <!-- Question image -->
       <div class="col-1-2 question-char">
         <p>
@@ -29,10 +32,10 @@
       </div>
       <!-- Answers -->
       <ul class="col-1-2 answers">
-        <li>に</li>
-        <li>さん</li>
-        <li>ろく</li>
-        <li>じゅう</li>
+        <li><a href="#">に</a></li>
+        <li><a href="#">さん</a></li>
+        <li><a href="#">ろく</a></li>
+        <li><a href="#">じゅう</a></li>
       </ul>
     </div>
     <!-- Question 2 -->
@@ -180,11 +183,8 @@
       </ul>
     </div>
     <!-- Progress bar -->
-    <div class="col-1-2 progress-tracker">
-      <div id="progress">
-        <p>
-          progress bar lol
-        </p>
+    <div class="col-1-1 progress-tracker hide">
+      <div class="progress">
       </div>
     </div>
     <!-- Quiz results -->
