@@ -1,20 +1,16 @@
 head,
 body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   background-color: #fff;
   font-family: 'Lato', sans-serif;
-  /* color: #7F7348; */
   color: #4F4F4D;
   letter-spacing: 0.01em;
 }
 
+/* Main container */
 .main-container {
   margin: auto;
-  /* padding: 0 1em; */
   width: 50em;
-  height: 31.5em;
+  height: 33.9em;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -24,10 +20,6 @@ body {
   border-radius: 4px;
   background-color: #fff;
   /* border: 1px solid black; */
-  /*
-  border: 1px solid #FFD644;
-  box-shadow: 3px 3px 0 #FFD644;
-  */
 }
 
 .clearfix:after {
@@ -37,53 +29,55 @@ body {
   clear: both;
 }
 
-.quiz-header h1 {
+/* Big title text */
+.title-text {
   font-size: 2.8em;
-  margin: 0.67em 0 0 0;
-}
-
-.col-1-2 {
-  width: 50%;
-  float: left;
+  text-transform: uppercase;
 }
 
 .title-text,
 .intro {
   text-align: center;
+  margin: 0.7em 0 -0.1em 0;
 }
 
-.title-text {
-  margin: 0.7em 0;
-  text-transform: uppercase;
-}
-
+/* Introduction text */
 .intro {
   text-transform: lowercase;
 }
 
+.hide {
+  display:none;
+}
+
+/* Subtitle text */
 .subtitle-text {
   margin: 0;
   position: absolute;
-  top: 50%;
+  top: 46.2%;
   left: 50%;
-  /* margin-right: -50%; */
   transform: translate(-50%, -50%)
 }
 
-.hide {
-  display: none;
+/* 1/2 .main-container width column */
+.col-1-2 {
+  width: 50%;
+  float: left;
 }
 
-.center {
-  position: absolute;
-  top: 78%;
-  left: 25%;
-}
-
+/* Question container */
 .question-container {
   margin: 1em 0 0 0;
 }
 
+/* Centers 'start' button */
+.center {
+  position: absolute;
+  top: 71.7%;
+  left: 25%;
+}
+
+/* Big Kanji characters */
 .question-char p {
   font-family: 'MS Mincho', 'MS PMincho', serif;
   font-size: 12.5em;
@@ -93,6 +87,7 @@ body {
   border-radius: 4px;
 }
 
+/* Hiragana answers */
 .answers {
   list-style: none;
   text-align: center;
@@ -140,18 +135,20 @@ body {
   color: #4F4F4D;
 }
 
+/* Full .main-container width column */
 .col-1-1 {
   width: 100%;
   float: left;
 }
 
+/* Progress bar */
 .progress-tracker {
   height: 3px;
   background-color: #C4C4C4;
   border-radius: 3px;
 }
 
-.progress-tracker > .progress {
+.progress {
   display: block;
   border-radius: 3px;
   /* background-color: green; */
@@ -159,10 +156,7 @@ body {
   width: 10%;
 }
 
-.progress-tracker p {
-  margin: 1%;
-}
-
+/* Quiz results */
 .results-container {
   text-align: center;
 }
