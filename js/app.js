@@ -1,12 +1,17 @@
-// TODO: add transition animations between questions
+/*
+TODO: add transition animations between questions
+count correctly answered questions (score)
+at end of quiz, hide questions and show results section with score
+add 'new game' button to results section which starts new game
+*/
 
 $(document).ready(function() {
+  $('#results').addClass('hide').hide();
   // Objects
+  var score = 0;
   var quiz = {
     currentQuestionIndex: 0,
     questionElement: $("#question-p"),
-    // idElement: $('[data-choice="question.answer"]'),
-    buttonElement: $(".button"),
     progressElement: $(".progress"),
     choicesElement: $("ul.choices"),
     resultsElement: $("#results"),
@@ -14,19 +19,13 @@ $(document).ready(function() {
       this.showQuestion();
     },
     evaluateChoice: function(selectedAnswer) {
-      /*
-      TODO: 1: make correct answer background green; if selected answer is incorrect change its background color to red
-      2: pause with colored buttons to show correct/incorrect answer, then switch to next
-      question and make all buttons gray again
-      3: fill up progress bar by 10% for each question answered
-      */
       var question = this.questions[this.currentQuestionIndex];
-      this.progressElement.css("background-color", "#7F7F7F");
-      this.progressElement.css("width", "10%");
+      var clickedButton = $('[data-choice="'+selectedAnswer+'"]');
       if (selectedAnswer === question.answer) {
-        this.idElement.css("background-color", "green");
+        clickedButton.addClass('win');
+        score++;
       } else {
-        this.buttonElement.css("background-color", "red");
+        clickedButton.addClass('fail');
       }
     },
     /*
@@ -41,18 +40,28 @@ $(document).ready(function() {
     */
     showQuestion: function() {
       var question = this.questions[this.currentQuestionIndex];
-      this.questionElement.text(question.question);
+      $(this.questionElement).text(question.question);
       for (var i = 0; i < question.choices.length; i++) {
         $('li[data-choice="' + i + '"]', this.choicesElement).text(question.choices[i]);
       }
     },
     moveForward: function() {
+      // timeout add class to hide, timeout run, execute move forward, add show class again
       var totalQuestions = quiz.questions.length;
       this.currentQuestionIndex++;
       if (this.currentQuestionIndex > totalQuestions - 1) {
+        /*
+        $('#question-box').addClass('hide').hide();
+        $('#progress-bar').addClass('hide').hide();
+        $('#results').addClass('show').show();
+        $('.results-text').text("You answered " + score + " out of 10 questions correctly! Click the button below to play again.");
+        */
         this.currentQuestionIndex = 0;
       }
       this.showQuestion();
+      var progress = (this.currentQuestionIndex / totalQuestions) * 100;
+      this.progressElement.css("width", progress + "%");
+      $('ul.choices li').removeClass('win fail');
     }
   };
 
@@ -119,35 +128,25 @@ $(document).ready(function() {
 
   // Events
   $("#start").click(function() {
-    $(this).hide();
-    $("#intro-container").hide();
-    $("#question-box").show();
-    $("#progress-bar").show();
+    // timeout remove this.hide, add class then run timeout, then hide and show
+    $(this).addClass('hide').hide();
+    $("#intro-container").addClass('hide').hide();
+    function transition() {
+      $("#question-box").addClass("show");
+      $("#progress-bar").addClass("show");
+    }
+    setTimeout(transition, 250);
     quiz.load();
   });
 
   $("ul.choices li").click(function() {
     var choiceNumber = $(this).data("choice");
     quiz.evaluateChoice(choiceNumber);
-    quiz.moveForward();
+    function questionDelay() {
+      quiz.moveForward();
+    }
+    setTimeout(questionDelay, 1200);
   });
 });
 
-  /*
-  function hide() {
-    $(this).css("display", "none");
-  }
-
-  function show() {
-    $(this).css("display", "inline");
-  }
-
-  $(document).ready(function() {
-    $("#start").click(function() {
-      $(this).hide();
-      $("#intro-container").hide();
-      $("#question-1").show();
-      $("#progress-bar").show();
-    });
-  });
-  */
+  // position absolute on one or both containers
