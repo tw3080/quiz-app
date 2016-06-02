@@ -36,7 +36,6 @@ $(document).ready(function() {
       }
     },
     moveForward: function() {
-      // timeout add class to hide, timeout run, execute move forward, add show class again
       var totalQuestions = quiz.questions.length;
       this.currentQuestionIndex++;
       if (this.currentQuestionIndex > totalQuestions - 1) {
