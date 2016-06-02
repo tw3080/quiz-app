@@ -68,6 +68,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-transform: lowercase;
+  font-weight: 400;
 }
 
 /* 1/2 .main-container width column */
@@ -119,7 +120,7 @@ body {
   transition: all linear 0.15s;
   text-decoration: none;
   display: block;
-  text-transform: lowercase;
+  text-transform: uppercase;
 }
 
 .button:hover {
