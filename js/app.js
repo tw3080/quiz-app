@@ -95,7 +95,7 @@ $(document).ready(function() {
       // Q8
     {
       question: "二",
-      choices: ["に", "ご", "よん", "きゅう・く"],
+      choices: ["に", "ご", "し・よん", "きゅう・く"],
       answer: 0
     },
       // Q9
