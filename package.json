@@ -1,0 +1,31 @@
+{
+  "name": "quiz-app",
+  "version": "1.0.0",
+  "description": "\"A quiz over the numbers 1-10 in Japanese\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run build:css",
+    "watch": "npm run watch:css",
+    "build:css": "npm run clean:css && lessc --source-map less/style.less css/style.css",
+    "watch:css": "npm run build:css && chokidar less/style.less -c 'npm run build:css'",
+    "clean:css": "rm -f css/style.css css/style.css.map"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tw3080/quiz-app.git"
+  },
+  "author": "Taylor Welling",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tw3080/quiz-app/issues"
+  },
+  "homepage": "https://github.com/tw3080/quiz-app#readme",
+  "dependencies": {
+    "jquery": "^3.1.0"
+  },
+  "devDependencies": {
+    "chokidar-cli": "^1.2.0",
+    "less": "^2.7.1"
+  }
+}
