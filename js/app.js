@@ -39,7 +39,7 @@ $(document).ready(function() {
       var totalQuestions = quiz.questions.length;
       this.currentQuestionIndex++;
       if (this.currentQuestionIndex > totalQuestions - 1) {
-        $('.results-text').html("You answered <strong>" + score + "</strong> out of <strong>10</strong> questions correctly! Click the button below to play again.");
+        $('#results-text').html("You answered <strong>" + score + "</strong> out of <strong>10</strong> questions correctly! Click the button below to play again.");
         this.showPage('results');
         this.currentQuestionIndex = 0;
       }
